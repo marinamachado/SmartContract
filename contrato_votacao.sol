@@ -46,7 +46,7 @@ contract sistemaVotacao {
 
 		require(
 			!eleitores[eleitor].votou,
-			"Tentaiva de voto duplicado."
+			"Tentativa de voto duplicado."
 		);
 
 		require(eleitores[eleitor].eleitorAtivo == 0);
@@ -61,7 +61,7 @@ contract sistemaVotacao {
 		Eleitor storage sender = eleitores[msg.sender];
 
 		require(sender.eleitorAtivo != 0, "Eleitor sem permissao para votar.");
-		require(!sender.votou, "Tentaiva de voto duplicado.");
+		require(!sender.votou, "Tentativa de voto duplicado.");
 
 		sender.votou = true;
 		sender.voto = candidato;
