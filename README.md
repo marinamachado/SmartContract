@@ -8,5 +8,5 @@ Contrato inteligente em solidity utilizando Ethereum de uma aplicação de vota�
 
 ## Deploy e Rodas as Transações
 - Pode ser feito utilizando a própria IDE
-- Utilizar as plataformas https://www.trufflesuite.com/ganache e myetherwallet.com 
+- Utilizar as plataformas https://www.trufflesuite.com/ganache e https://github.com/myetherwallet
 
