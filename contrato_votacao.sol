@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.4.22;
 
-/// @title Sistema de Votação  
-/// O seguinte contrato tem como objetivo implementar um sistema de votação descentralizado.
+// Sistema de Votação 
+// O seguinte contrato tem como objetivo implementar um sistema de votação descentralizado.
 contract sistemaVotacao {
     
     
@@ -15,14 +15,14 @@ contract sistemaVotacao {
 	struct Eleitor {
 	    uint voto;  		// indica em qual candidato o eleitor votou
 		bool votou; 		// indica se o eleitor já votou
-		bool eleitorAtivo;	/// indica se o eleitor está autorizado a votar
+		bool eleitorAtivo;	// indica se o eleitor está autorizado a votar
 
 	}
 
-	uint contagemVotos;
-	
 	address public responsavel;	// entidade responsável pela eleição
-	
+
+	uint contagemVotos;
+		
 	Candidatura[] public candidaturas;
 	
 	mapping(address => Eleitor) public eleitores;
