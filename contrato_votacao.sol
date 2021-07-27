@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity ^0.4.22;
 
 /// @title Sistema de Votação  
 /// O seguinte contrato tem como objetivo implementar um sistema de votação descentralizado.
@@ -43,12 +43,13 @@ contract sistemaVotacao {
 		}
 	}
 	
+	
 	address[] public eleitoresAtivos;
 	
 	/* permite ao responsável pela votação distribuir aos outros participantes permissões para votar
 	paramêtro:
 		address eleitor -- eleitor a que será dada a permissão de voto.	*/
-	function direitoVotar(address eleitor) public {
+	function direitoVotar(address eleitor) external {
 		require(
 			msg.sender == responsavel,
 			"Somente o responsavel pode dar o direito ao voto."
@@ -71,7 +72,7 @@ contract sistemaVotacao {
 	/* contabiliza um voto a um determinado candidato
 	parâmetro:
 		unit candidato -- candidato para o qual irá o voto. */
-	function votacao(uint candidato) public {	
+	function votacao(uint candidato) external {	
 		
 		Eleitor storage emissor = eleitores[msg.sender];
 
@@ -95,8 +96,8 @@ contract sistemaVotacao {
 	/* determina candidato eleito
 	retorno:
 		unit candidatoEleito --  candidato eleito. */
-	function obterCandEleito() public view
-			returns (uint candidatoEleito)
+	function obterCandEleito() external view
+			returns (string memory nomeEleito)
 	{
 		require(
 		    contagemVotos > 0, 
@@ -105,6 +106,7 @@ contract sistemaVotacao {
 		
 		bool ehEmpate = false;
 		uint valorEmpate = 0;
+		uint candidatoEleito;
 		
 		uint contadorVotosEleito = 0;
 		for (uint c = 0; c < candidaturas.length; c++) {
@@ -131,15 +133,9 @@ contract sistemaVotacao {
 		    candidatoEleito != 0,
 		    "Votacao anulada."
 		);
+		
+		nomeEleito = candidaturas[candidatoEleito].nome;
 
 	}
-
-	/* retorna o nome do candidato eleito
-	retorno:
-		string memory nomeEleito -- nome do candidato eleito. */
-	function eleitoNome() public view
-			returns (string memory nomeEleito)
-	{
-		nomeEleito = candidaturas[obterCandEleito()].nome;
-	}	
+	
 }
