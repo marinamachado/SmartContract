@@ -124,14 +124,15 @@ contract sistemaVotacao {
 		}
 		
 		require(
+		    candidatoEleito != 0,
+		    "Votacao anulada."
+		);
+		
+		require(
 		    ehEmpate == false || valorEmpate < contadorVotosEleito,
 		    "Empate."
 		);
 		
-		require(
-		    candidatoEleito != 0,
-		    "Votacao anulada."
-		);
 		
 		nomeEleito = candidaturas[candidatoEleito].nome;
 
