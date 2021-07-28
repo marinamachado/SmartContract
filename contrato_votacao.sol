@@ -112,15 +112,14 @@ contract sistemaVotacao {
 		for (uint c = 0; c < candidaturas.length; c++) {
 		    
 			if (candidaturas[c].contVotos >= contadorVotosEleito) {
-			    
-				contadorVotosEleito = candidaturas[c].contVotos;
-				candidatoEleito = c;
-				
+			  
 				if (candidaturas[c].contVotos == contadorVotosEleito) {
 					
 					ehEmpate = true;
 					valorEmpate = candidaturas[c].contVotos;
 				}
+				contadorVotosEleito = candidaturas[c].contVotos;
+				candidatoEleito = c;
 			}
 		}
 		
