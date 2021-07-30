@@ -8,12 +8,10 @@ Contrato inteligente em solidity utilizando Ethereum de uma aplicação de vota�
 - Rafael Roque - 10295412
 - Leonardo Altemari - 10284883
 - Luiza P P Machado - 7564426
-- Guilherme - 9779461
-- Gabriel - 11208176
+- Guilherme Montemovo - 9779461
+- Gabriel Souza - 11208176
 - Lucas Viana Vilela - 10748409
 - Raphael M Vieira - 10284239
-
-
 
 
 ## Compilação
