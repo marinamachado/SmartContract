@@ -18,7 +18,7 @@ Contrato inteligente em solidity utilizando Ethereum de uma aplicação de vota�
 - O código _contrato_votacao.sol_ pode ser compilado utilizando a IDE online https://remix.ethereum.org/
 - Utilizar o compilador da mesma vesão indicada no código (0.4.22) para garantir que não existam erros.
 
-## Deploy e Rodas as Transações
+## _Deploy_ e Rodar as Transações
 - Pode ser feito utilizando a própria IDE
 - Utilizar as plataformas https://www.trufflesuite.com/ganache e https://github.com/myetherwallet
 
